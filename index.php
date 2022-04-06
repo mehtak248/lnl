@@ -1,3 +1,18 @@
+<?php
+    //set the profile data array.
+    $profileData = array(
+        'name'    => 'Karina Cruz',
+        'image'   => 'profile.png',
+        'post'    => 'President & Founder',
+        'address_1' => 'La Nueva Liga LLC',
+        'address_2' => '1650 Gardena Ave',
+        'address_3' => 'Glendale CA',
+        'phone'   => '818-334-3590',
+        'email'   => 'info@LNLproductions.la',
+        'website' => 'http://LNLproductions.la',
+    );
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -27,13 +42,13 @@
                         <div class="row">
                             <div class="col-5">
                                 <div class="image-block">
-                                    <img src="assets/images/profile.png" class="img-fluid" />
+                                    <img src="assets/images/<?php echo (isset($profileData['image']) ? $profileData['image'] : ''); ?>" class="img-fluid" />
                                 </div>
                             </div>
                             <div class="col-7">
                                 <div class="details-block">
-                                    <h2>Karina Cruz</h2>
-                                    <h4>President & Founder</h4>
+                                    <h2><?php echo (isset($profileData['name']) ? $profileData['name'] : ''); ?></h2>
+                                    <h4><?php echo (isset($profileData['post']) ? $profileData['post'] : ''); ?></h4>
                                 </div>
                             </div>
                         </div>
@@ -55,25 +70,43 @@
                                             <div class="icon-block">
                                                 <img src="assets/images/icon1.png" class="img-fluid" />
                                             </div>
-                                            <a href="LNLproductions.la">LNLproductions.la</a>
+                                            <a href="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>"><?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?></a>
                                         </li>
                                         <li>
                                             <div class="icon-block">
                                                 <img src="assets/images/icon2.png" class="img-fluid" />
                                             </div>
-                                            <a href="mailto:info@LNLproductions.la">info@LNLproductions.la</a>
+                                            <a href="mailto:<?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?>"><?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?></a>
                                         </li>
                                         <li class="phone">
                                             <div class="icon-block">
                                                 <img src="assets/images/icon3.png" class="img-fluid" />
                                             </div>
-                                            <a href="tel:818-334-3590">818-334-3590</a>
+                                            <a href="tel:<?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?>"><?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?></a>
                                         </li>
                                     </ul>
+                                    <form method="post" action="manage-vcard.php" id="mangeVcard">
+                                        <input type="hidden" name="action" value="create_vcard">
+                                        <input type="hidden" name="image" value="<?php echo (isset($profileData['image']) ? $profileData['image'] : ''); ?>">
+                                        <input type="hidden" name="name" value="<?php echo (isset($profileData['name']) ? $profileData['name'] : ''); ?>">
+                                        <input type="hidden" name="post" value="<?php echo (isset($profileData['post']) ? $profileData['post'] : ''); ?>">
+                                        <input type="hidden" name="address_1" value="<?php echo (isset($profileData['address_1']) ? $profileData['address_1'] : ''); ?>">
+                                        <input type="hidden" name="address_2" value="<?php echo (isset($profileData['address_2']) ? $profileData['address_2'] : ''); ?>">
+                                        <input type="hidden" name="address_3" value="<?php echo (isset($profileData['address_3']) ? $profileData['address_3'] : ''); ?>">
+                                        <input type="hidden" name="phone" value="<?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?>">
+                                        <input type="hidden" name="email" value="<?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?>">
+                                        <input type="hidden" name="website" value="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>">
+                                    </form>
                                 </div>
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="vcard-tab2">
                                     <div class="music-block">
                                         <div class="row">
+                                            <div class="col-md-12">
+                                                <div style="left: 0; width: 100%; height: 380px; position: relative;">
+                                                    <iframe src="https://open.spotify.com/embed/playlist/5a2OuIJ1kEttA8X3PaewlI?utm_source=oembed" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen allow="encrypted-media;"></iframe>
+                                                </div>
+                                            </div>
+                                            <!-- 
                                             <div class="col-md-5">
                                                 <div class="music-image-block">
                                                     <img src="assets/images/music.png" class="img-fluid" />
@@ -126,30 +159,46 @@
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                            </div>
+                                            </div>  -->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="vcard-tab3">
                                     <div class="lnl-details-block">
-                                        <h2>La Nueva Liga LLC </h2>
-                                        <h4>1650 Gardena Ave <br />Glendale CA</h4>
+                                        <h2><?php echo (isset($profileData['address_1']) ? $profileData['address_1'] : ''); ?> </h2>
+                                        <h4><?php echo (isset($profileData['address_2']) ? $profileData['address_2'] : ''); ?> <br /><?php echo (isset($profileData['address_3']) ? $profileData['address_3'] : ''); ?></h4>
                                         <div class="lnl-link">
-                                            <a href="LNLproductions.la">LNLproductions.la</a>
+                                            <a href="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>"><?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?></a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="vcard-tab4">
-                                    <form class="contact-form">
+                                    <form class="contact-form" id="frm_contact_form" method="post">
+                                        <input type="hidden" name="action" value="contact_submit_details">
                                         <div class="form-group">
-                                            <input type="email" placeholder="Your Email" class="form-control" />
+                                            <input type="email" name="email" placeholder="Your Email" class="form-control" />
                                         </div>
                                         <div class="form-group">
-                                            <textarea placeholder="Your Message" class="form-control"></textarea>
+                                            <textarea placeholder="Your Message" name="message" class="form-control"></textarea>
                                         </div>
                                         <div class="form-group button-group">
-                                            <button type="submit" class="btn btn-black">Contact</button>
+                                            <button type="submit" id="btn_contact_submit" class="btn btn-black">Contact</button>
                                         </div>
+                                        <div class="form-group button-group">
+                                        <div class="alert alert-success alert-dismissible d-none" role="alert">
+                                            You have successfully submitted details
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="alert alert-danger alert-dismissible d-none" role="alert">
+                                            Sorry, Something went wrong.
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -184,7 +233,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div class="button-block">
-                                        <a href="javascript:void(0);" class="btn btn-black">DOWNLOAD VCARD</a>
+                                        <a href="javascript:void(0);" class="btn btn-black btnDownloadVcard">DOWNLOAD VCARD</a>
                                     </div>
                                 </div>
                             </div>
