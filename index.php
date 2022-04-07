@@ -47,8 +47,12 @@
                             </div>
                             <div class="col-7">
                                 <div class="details-block">
-                                    <h2><?php echo (isset($profileData['name']) ? $profileData['name'] : ''); ?></h2>
-                                    <h4><?php echo (isset($profileData['post']) ? $profileData['post'] : ''); ?></h4>
+                                    <h2>
+                                        <?php echo (isset($profileData['name']) ? $profileData['name'] : ''); ?>
+                                    </h2>
+                                    <h4>
+                                        <?php echo (isset($profileData['post']) ? $profileData['post'] : ''); ?>
+                                    </h4>
                                 </div>
                             </div>
                         </div>
@@ -66,23 +70,41 @@
                             <div class="tab-content" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="vcard-tab1">
                                     <ul class="vcard1">
-                                        <li>
-                                            <div class="icon-block">
-                                                <img src="assets/images/icon1.png" class="img-fluid" />
+                                        <li class="row">
+                                            <div class="col-2">
+                                                <div class="icon-block">
+                                                    <img src="assets/images/icon1.png" class="img-fluid" />
+                                                </div>
                                             </div>
-                                            <a href="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>"><?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?></a>
+                                            <div class="col-10">
+                                                <a href="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>">
+                                                    <?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>
+                                                </a>
+                                            </div>
                                         </li>
-                                        <li>
-                                            <div class="icon-block">
-                                                <img src="assets/images/icon2.png" class="img-fluid" />
+                                        <li class="row">
+                                            <div class="col-2">
+                                                <div class="icon-block">
+                                                    <img src="assets/images/icon2.png" class="img-fluid" />
+                                                </div>
                                             </div>
-                                            <a href="mailto:<?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?>"><?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?></a>
+                                            <div class="col-10">
+                                                <a href="mailto:<?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?>">
+                                                    <?php echo (isset($profileData['email']) ? $profileData['email'] : ''); ?>
+                                                </a>
+                                            </div>
                                         </li>
-                                        <li class="phone">
-                                            <div class="icon-block">
-                                                <img src="assets/images/icon3.png" class="img-fluid" />
+                                        <li class="row phone">
+                                            <div class="col-2">
+                                                <div class="icon-block">
+                                                    <img src="assets/images/icon3.png" class="img-fluid" />
+                                                </div>
                                             </div>
-                                            <a href="tel:<?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?>"><?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?></a>
+                                            <div class="col-10">
+                                                <a href="tel:<?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?>">
+                                                    <?php echo (isset($profileData['phone']) ? $profileData['phone'] : ''); ?>
+                                                </a>
+                                            </div>
                                         </li>
                                     </ul>
                                     <form method="post" action="manage-vcard.php" id="mangeVcard">
@@ -165,10 +187,17 @@
                                 </div>
                                 <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="vcard-tab3">
                                     <div class="lnl-details-block">
-                                        <h2><?php echo (isset($profileData['address_1']) ? $profileData['address_1'] : ''); ?> </h2>
-                                        <h4><?php echo (isset($profileData['address_2']) ? $profileData['address_2'] : ''); ?> <br /><?php echo (isset($profileData['address_3']) ? $profileData['address_3'] : ''); ?></h4>
+                                        <h2>
+                                            <?php echo (isset($profileData['address_1']) ? $profileData['address_1'] : ''); ?>
+                                        </h2>
+                                        <h4>
+                                            <?php echo (isset($profileData['address_2']) ? $profileData['address_2'] : ''); ?> <br />
+                                            <?php echo (isset($profileData['address_3']) ? $profileData['address_3'] : ''); ?>
+                                        </h4>
                                         <div class="lnl-link">
-                                            <a href="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>"><?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?></a>
+                                            <a href="<?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>">
+                                                <?php echo (isset($profileData['website']) ? $profileData['website'] : ''); ?>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -185,20 +214,20 @@
                                             <button type="submit" id="btn_contact_submit" class="btn btn-black">Contact</button>
                                         </div>
                                         <div class="form-group button-group">
-                                        <div class="alert alert-success alert-dismissible d-none" role="alert">
-                                            You have successfully submitted details
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
+                                            <div class="alert alert-success alert-dismissible d-none" role="alert">
+                                                You have successfully submitted details
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="alert alert-danger alert-dismissible d-none" role="alert">
+                                                Sorry, Something went wrong.
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                        
-                                        <div class="alert alert-danger alert-dismissible d-none" role="alert">
-                                            Sorry, Something went wrong.
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                    </div>
                                     </form>
                                 </div>
                             </div>

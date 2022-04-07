@@ -173,25 +173,40 @@
                                 .icon-block {
                                     width: 30px;
                                     height: 30px;
+                                    flex: 30px;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
                                     border-radius: 30px;
                                     text-decoration: none;
                                     background-color: #e3b244;
-                                    margin: 0 15px 0 0;
+                                    margin: 0 7px 0 0;
+
+                                    @include responsive(md) {
+                                        margin: 0 15px 0 0;
+                                    }
 
                                     img {
-                                        max-width: 14px;
+                                        max-width: 12px;
+
+                                        @include responsive(md) {
+                                            max-width: 14px;
+                                        }
                                     }
                                 }
 
                                 a {
-                                    font-size: 18px;
-                                    line-height: 22px;
+                                    font-size: 13px;
+                                    line-height: 18px;
                                     color: #221f20;
                                     font-weight: 400;
                                     text-decoration: none;
+                                    word-break: break-all;
+
+                                    @include responsive(md) {
+                                        font-size: 18px;
+                                        line-height: 22px;
+                                    }
                                 }
 
                                 &.phone {
