@@ -15062,3 +15062,13 @@ ul {
   background-color: #000000;
   padding: 10px 25px;
 }
+
+@media (max-width: 767px) {
+    .banner-block .banner-subblock .content-block .tab-block .tab-content .tab-pane .lnl-details-block .lnl-link a {
+        font-size: 14px !important;
+    }
+}
+
+.error {
+    color: red;
+}
